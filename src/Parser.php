@@ -503,7 +503,13 @@ class Parser
                         }
                     }
                 } else {
-                    if (!in_array($item, ApiDefinition::getStraightForwardTypes(), true)) {
+                    $type = $item;
+                    // if $type contains a '[]' it means we have an array with a item restriction
+                    if (strpos($type, '[]') !== false) {
+                        $type = substr($type, 0, -2);
+                    }
+
+                    if (!in_array($type, ApiDefinition::getStraightForwardTypes(), true)) {
                         if (strpos($item, '|') !== false) {
                             $definition[$key] = implode(
                                 '|',
