@@ -598,6 +598,7 @@ class ApiDefinition implements ArrayInstantiationInterface
             'file',
             'array',
             'object',
+            'any'
         ];
     }
 

@@ -86,8 +86,7 @@ There are two Route Formatters included in the package:
 
 ### Contributing
 ```bash
-composer validate-files
-composer run-static-analysis
-composer check-code-style
-composer run-tests
+./vendor/bin/phpunit
+./vendor/bin/phpunit --coverage-text
+./vendor/bin/phpcs --standard=PSR1,PSR2 src
 ```
